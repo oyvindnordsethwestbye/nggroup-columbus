@@ -164,11 +164,12 @@ export async function getStaticProps({ params }) {
 }
 
 const Stories = ({ data, errors }) => {
+  const { folder } = data || {};
   if (errors) {
     console.log("error", errors);
     return <div>Ops ...</div>;
   }
-  const { folder } = data;
+  
   const hero = {
     images: folder?.hero_images?.content?.images,
     videos: folder?.hero_videos?.content?.videos,

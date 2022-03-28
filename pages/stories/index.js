@@ -159,16 +159,18 @@ fragment storyItem on Item {
 
 export async function getStaticProps({ params }) {
   const path = `/stories`;
-  const data = await fetcher([query, { path }]);
+  const data = await fetcher([query, { path }] || {});
   return { props: { ...data, path }, revalidate: 1 };
 }
 
 const Stories = ({ data, errors }) => {
+  const { folder } = data || {};
   if (errors) {
     console.log("error", errors);
     return <div>Ops ...</div>;
   }
-  const { folder } = data;
+
+  console.log("Folder", folder);
   const hero = {
     images: folder?.hero_images?.content?.images,
     videos: folder?.hero_videos?.content?.videos,
