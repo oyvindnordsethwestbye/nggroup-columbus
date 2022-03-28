@@ -210,7 +210,8 @@ export async function getStaticProps({ params, req }) {
     new RegExp(exclusivePathIdentifier, "ig"),
     ""
   )}`;
-  const data = await fetcher([query, { path }]);
+  const data = await fetcher([query, { path }]  || []);
+
   const isExclusivePath = params.story.includes(exclusivePathIdentifier);
 
   return { props: { data, isExclusivePath }, revalidate: 1 };
@@ -234,6 +235,7 @@ export async function getStaticPaths() {
       }
     }
   `);
+
 
   const children = data?.data?.catalogue?.children || [];
   const publicPaths = children.map((c) => c.path);

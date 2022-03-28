@@ -210,7 +210,7 @@ export async function getStaticProps({ params, req }) {
     new RegExp(exclusivePathIdentifier, "ig"),
     ""
   )}`;
-  const data = await fetcher([query, { path }]);
+  const data = await fetcher([query, { path }]  || []);
   const isExclusivePath = params.story.includes(exclusivePathIdentifier);
 
   return { props: { data, isExclusivePath }, revalidate: 1 };
