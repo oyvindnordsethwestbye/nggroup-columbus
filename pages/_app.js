@@ -8,7 +8,7 @@ import { AuthProvider } from "components/auth";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     padding: 0;
     background:#000;
@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;800&display=swap"
           rel="stylesheet"
         />
       </Head>

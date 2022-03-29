@@ -73,7 +73,7 @@ const Hero = styled.section`
     color: ${(p) => (p.hasMedia ? "#fff" : "000")};
   }
   ${Block} {
-    background: ${(p) => (p.hasMedia ? "rgba(0, 0, 0, 0.2)" : "#fff")};
+    background: ${(p) => (p.hasMedia ? "rgba(0, 0, 0, 0.3)" : "#000")};
   }
   ${Arrow} {
     &:before,

@@ -47,6 +47,7 @@ const Outer = styled.header`
 
 const Navigation = styled.nav`
   display: flex;
+  width: 30%;
   align-items: center;
   color: ${(p) => p.color};
   ${({ theme }) => theme.responsive.xs} {
@@ -55,7 +56,9 @@ const Navigation = styled.nav`
   /* justify-content: stretch; */
 `;
 const NavLink = styled.span`
-  display: flex;
+ display: flex;
+  min-width: max-content;
+    justify-content: flex-end;
   font-weight: 600;
   cursor: pointer;
   font-size: 15px;
@@ -73,6 +76,7 @@ const NavLink = styled.span`
   }
   ${({ theme }) => theme.responsive.xs} {
     padding: 0 10px;
+    min-width: max-content;
     &:first-child {
       padding-left: 0;
     }
@@ -81,7 +85,14 @@ const NavLink = styled.span`
 
 const Actions = styled.div`
   display: flex;
+  width: 30%;
+  justify-content: flex-end;
+
+${({ theme }) => theme.responsive.xs} {
+    width: max-content;
+    }
 `;
+
 const ActionBtn = styled.a`
   height: 50px;
   width: 50px;
@@ -99,10 +110,8 @@ const ActionBtn = styled.a`
 
 const LogoWrapper = styled.div`
   position: relative;
-  height: 50px;
   overflow: hidden;
   cursor: pointer;
-  width: 250px;
   margin: 0 auto;
   }
   ${({ theme }) => theme.responsive.xs} {
